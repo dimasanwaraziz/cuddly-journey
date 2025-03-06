@@ -1,0 +1,12 @@
+services:
+  snark:
+    build: .
+    volumes:
+      - .:/app
+    working_dir: /app
+    entrypoint: ["/app/entrypoint.sh"]
+    # command: ["python3", "test.py"]
+    stdin_open: true
+    tty: true
+    command: ["bash"]
+    restart: unless-stopped
